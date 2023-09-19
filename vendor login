@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .login-container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 100px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button.cancel {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <form id="adminLoginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" class="cancel" onclick="cancelLogin()">Cancel</button>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function cancelLogin() {
+            // Add your cancel logic here
+            alert("Login canceled");
+        }
+
+        document.getElementById("adminLoginForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting (for demo purposes)
+            const username = document.getElementById("username").value;
+            const id = document.getElementById("id").value;
+            const password = document.getElementById("password").value;
+
+            // Add your login logic here
+            // You can validate the credentials and redirect to the admin panel if successful
+            // For this example, we'll just show an alert message
+            alert(`Login Attempt\nUsername: ${username}\nID: ${id}\nPassword: ${password}`);
+        });
+    </script>
+</body>
+</html>
